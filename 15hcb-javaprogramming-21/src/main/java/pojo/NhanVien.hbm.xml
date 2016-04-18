@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="QLQADB" name="pojo.NhanVien" table="nhanvien">
+		<id name="ma" type="int">
+			<column name="ma" />
+			<generator class="assigned" />
+		</id>
+		<property name="hoten" type="string">
+			<column name="hoten" />
+		</property>
+		<property name="ngaysinh" type="date">
+			<column name="ngaysinh" />
+		</property>
+		<property name="diachi" type="string">
+			<column name="diachi" />
+		</property>
+		<property name="dienthoai" type="int">
+			<column name="dienthoai" />
+		</property>
+		<property name="cmnd" type="int">
+			<column name="cmnd" />
+		</property>
+		<property name="gioitinh" type="string">
+			<column name="gioitinh" />
+		</property>
+		<property name="hesoluong" type="double">
+			<column name="hesoluong" />
+		</property>
+		<property name="trinhdo" type="double">
+			<column name="trinhdo" />
+		</property>
+		<many-to-one class="pojo.LoaiNhanVien" name="loainv"
+			fetch="select" lazy="false">
+			<column length="45" name="loainv" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

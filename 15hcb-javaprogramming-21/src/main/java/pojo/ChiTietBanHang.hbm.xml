@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate
+Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class catalog="QLQADB" name="pojo.Ban" table="Ban">
+		<id name="ma" type="int">
+			<column name="ma" />
+			<generator class="assigned" />
+		</id>
+		<property name="soluong" type="int">
+			<column name="soluong" />
+		</property>
+		<property name="tinhtrang" type="string">
+			<column name="tinhtrang" />
+		</property>
+		<property name="thoigian" type="date">
+			<column name="thoigian" />
+		</property>
+		<property name="thanhtien" type="int">
+			<column name="thanhtien" />
+		</property>
+		<property name="ghichu" type="string">
+			<column name="ghichu" />
+		</property>
+		<many-to-one class="pojo.Ban" name="ban"
+			fetch="select" lazy="false">
+			<column length="45" name="maban" not-null="true" />
+		</many-to-one>
+		<many-to-one class="pojo.ThucDon" name="thucdon"
+			fetch="select" lazy="false">
+			<column length="45" name="mamon" not-null="true" />
+		</many-to-one>
+		<many-to-one class="pojo.Ban" name="ban"
+			fetch="select" lazy="false">
+			<column length="45" name="maban" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
